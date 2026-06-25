@@ -4,7 +4,7 @@ async function loadLeaderboard() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     try {
-        let response = await fetch('https://test-tommot.vercel.app/leaderboard');
+        let response = await fetch('https://test-seven-pi-35.vercel.app/leaderboard');
         let data = await response.json();
         data = data.sort((a, b) => b.score - a.score);
         list.innerHTML = ``;
@@ -28,7 +28,7 @@ async function submitScore() {
     }
 
     try {
-        let response = await fetch('https://test-tommot.vercel.app/saveResult', {
+        let response = await fetch('https://test-seven-pi-35.vercel.app/saveResult', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ name, score })
