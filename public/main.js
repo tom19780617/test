@@ -4,7 +4,7 @@ async function loadLeaderboard() {
     await new Promise(resolve => setTimeout(resolve, 1000));
 
     try {
-        let response = await fetch('https://tom19780617.github.io/test/api/leaderboard');
+        let response = await fetch('https://localhost:3000/api/leaderboard');
         let data = await response.json();
         data = data.sort((a, b) => b.score - a.score);
         list.innerHTML = ``;
@@ -28,7 +28,7 @@ async function submitScore() {
     }
 
     try {
-        let response = await fetch('https://tom19780617.github.io/test/api/saveResult', {
+        let response = await fetch('https://localhost:3000/api/saveResult', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify({ name, score })
