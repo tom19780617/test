@@ -3,7 +3,7 @@ const app = express();
 const mysql = require('mysql2');
 const cors = require('cors');
 require('dotenv').config();
-const routerpage=require('./page.js');
+const routerpage=require('./public/page.js');
 
 app.use(express.json());
 app.use(cors());
