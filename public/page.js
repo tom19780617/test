@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 router.get('/api', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public'));
+    res.sendFile(path.resolve('public/index.html'));
 })
 
 module.exports = router;
